@@ -188,24 +188,28 @@ h1, h2, h3, h4, h5, h6 {
   color: #2c3c4c; }
 
 h1 {
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.25em; }
 
+header h1 {
+  font-size: 26px;
+}
+
 h2 {
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1.304em;
   max-width: 22em;
-  margin: 3.043em 0 0.109em; }
+  margin: 3.043em 0 0.545em; }
   h2.entry-title, aside h2 {
     margin-top: 0; }
 
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1em;
   margin: 2em 0 0.5em; }
 
 h4 {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.667em;
   margin: 1.111em 0 0.278em; }
 
@@ -317,6 +321,7 @@ article,
 div.side aside, div.side footer {
   max-width: 34em;
   margin: 4.286em 2.143em 7.143em;
+  padding: 0 0 1.428em;
   border-bottom: 1px solid #d5d5d5; }
 
 article footer {

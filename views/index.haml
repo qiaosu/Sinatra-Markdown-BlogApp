@@ -1,10 +1,10 @@
 -# coding: UTF-8
 %header{:id => "top"}
   %h1
-    %a.clearfix{:href => "http://einserver.de/"}
+    %a.clearfix{:href => "#"}
       %b
       %i
-      %span einserver.de
+      %span Stock Diary
   %nav.menu
     %ul
       - if current_user
@@ -13,11 +13,7 @@
           = current_user.email 
           )
         %li.nav-blog.active
-          %a{:href => "http://einserver.de/"} Blog
-        %li.nav-portfolio
-          %a{:href => "http://einserver.de/portfolio"} Portfolio
-        %li.nav-goodies
-          %a{:href => "http://einserver.de/goodies"} Goodies
+          %a{:href => "#"} Blog
         %li.nav-logout
           %a{:href => "/logout"} logout
       - else
@@ -45,26 +41,10 @@
 .side
   %aside#info
     %h3 About
-    %p einserver.de is a blog by Florian Pichler. Design, Code and other chaos included.
-  %aside#nomoreitunes
-    %h3 NoMoreiTunes
-    %p 
-      My Safari Extension that prevents iTunes Preview pages from launching iTunes.app now has it's own page. 
-      %a{:href => "http://nomoreitunes.einserver.de"} Get NoMoreiTunes now
-  %aside#warning
-    %h3 Elsewhere
-    %p 
-      You should definitly try one of the following: 
-      %a{:href => "http://twitter.com/pichfl"} Follow me
-      on Twitter, 
-      %a{:href => "https://github.com/pichfl"} check out
-      my code projects on GitHub and 
-      %a{:href => "http://dribbble.com/pichfl"} look at
-      my Dribble&nbsp;shots.
-    %p So long &amp; see you soon!
+    %p This is a blog by Kenshin. Design, Code and other chaos included.
   %aside
     %h2 Hint
-    %p You can navigate this blog with your keyboard. Your left/right to switch pages or posts.
+    %p You can use markdown for writing this blog.
 %footer
   © 2004-2012 
   %a{:href => "http://florianpichler.de"} Florian Pichler
