@@ -1,0 +1,72 @@
+-# coding: UTF-8
+%header{:id => "top"}
+  %h1
+    %a.clearfix{:href => "http://einserver.de/"}
+      %b
+      %i
+      %span einserver.de
+  %nav.menu
+    %ul
+      - if current_user
+        %li.nav-intro
+          (
+          = current_user.email 
+          )
+        %li.nav-blog.active
+          %a{:href => "http://einserver.de/"} Blog
+        %li.nav-portfolio
+          %a{:href => "http://einserver.de/portfolio"} Portfolio
+        %li.nav-goodies
+          %a{:href => "http://einserver.de/goodies"} Goodies
+        %li.nav-logout
+          %a{:href => "/logout"} logout
+      - else
+        %li.nav-login
+          %a{:href => "/login"} login
+        %li.nav-register
+          %a{:href => "/signup"} register
+%section#content
+  %article
+    = glorify @diary_0
+  %article
+    %h2
+      %a{:href => "http://einserver.de/blog/easy-access-to-icloud-files"} An easy way to access your iCloud documents
+    %p Apple has a strange idea of cloud based storage. The biggest problem of the current way for accessing files in iCloud is that you have no other option but to open the same application you used to put stuff into iCloud to access it again. Which means, once you use Mail to put a PDF into iCloud, it is somehow lost in the virtual realms. At least that's what I thought. After a bit of searching I found the files hidden in a folder in my Library.
+    %p Since I hate digging to folders just to reach a folder I know, I decided to make a symbolic link to the folder into my home directory. You can do the same by entering the following command into Terminal.app:
+    %pre>
+      %code ln -s ~/Library/Mobile\ Documents ~/iCloud
+    %p I hope this saves some trouble.
+    %p So long.
+    %footer
+      %time{:datetime => "2012-08-20T00:00:00+00:00"}
+        %a{:href => "http://einserver.de/blog/easy-access-to-icloud-files", :title => "Permanent link to this post"} 20th August 2012
+  %nav.pagination
+    %a.next{:href => "http://einserver.de/page:2"} &larr; older posts
+.side
+  %aside#info
+    %h3 About
+    %p einserver.de is a blog by Florian Pichler. Design, Code and other chaos included.
+  %aside#nomoreitunes
+    %h3 NoMoreiTunes
+    %p 
+      My Safari Extension that prevents iTunes Preview pages from launching iTunes.app now has it's own page. 
+      %a{:href => "http://nomoreitunes.einserver.de"} Get NoMoreiTunes now
+  %aside#warning
+    %h3 Elsewhere
+    %p 
+      You should definitly try one of the following: 
+      %a{:href => "http://twitter.com/pichfl"} Follow me
+      on Twitter, 
+      %a{:href => "https://github.com/pichfl"} check out
+      my code projects on GitHub and 
+      %a{:href => "http://dribbble.com/pichfl"} look at
+      my Dribble&nbsp;shots.
+    %p So long &amp; see you soon!
+  %aside
+    %h2 Hint
+    %p You can navigate this blog with your keyboard. Your left/right to switch pages or posts.
+%footer
+  © 2004-2012 
+  %a{:href => "http://florianpichler.de"} Florian Pichler
+  %br
+  %a{:href => "http://einserver.de/imprint"} Imprint
