@@ -4,3 +4,5 @@ Gemfile.lock
 .DS_Store
 
 development.db
+
+diaries/2012.09.02.md
