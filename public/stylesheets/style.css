@@ -319,7 +319,7 @@ blockquote em {
 
 article,
 div.side aside, div.side footer {
-  max-width: 34em;
+  max-width: 60em;
   margin: 4.286em 2.143em 7.143em;
   padding: 0 0 1.428em;
   border-bottom: 1px solid #d5d5d5; }
@@ -333,6 +333,22 @@ article footer {
     font-style: italic; }
     article footer time a, article footer time a:link, article footer time a:visited {
       color: #c8c8c8; }
+
+article table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+article td, article th {
+  padding: 5px 10px;
+  border-bottom: solid 1px #E3E3E3;
+  text-align: center;
+  font-size: 13px;
+}
+
+article th {
+  border-bottom: solid 2px #DDD;
+}
 
 .pagination {
   overflow: hidden;
@@ -498,3 +514,30 @@ div.side {
     margin-left: -5em;
     padding-left: 1.5em;
     padding-right: 1.5em; } }
+
+
+/** color */
+html body .gray-m {
+    color: #666;
+}
+html body .blue {
+    color: #06b;
+}
+html body .orange {
+    color: #F60;
+}
+html body .green {
+    color: #53A000;
+}
+html body .gray-l {
+    color: #A6A6A6;
+}
+html body .gray-d {
+    color: #4D4D4D;
+}
+html body .black {
+    color: #000;
+}
+html body .red {
+    color:#FF5243;
+}
