@@ -8,10 +8,6 @@
   %nav.menu
     %ul
       - if current_user
-        %li.nav-intro
-          (
-          = current_user.email 
-          )
         %li.nav-blog.active
           %a{:href => "#"} Blog
         %li.nav-logout
@@ -22,11 +18,12 @@
         %li.nav-register
           %a{:href => "/signup"} register
 %section#content
-  %article
-    = glorify @diary_0
+  - if current_user
+    %article
+      = glorify @diary_0
   %article
     %h2
-      %a{:href => "http://einserver.de/blog/easy-access-to-icloud-files"} An easy way to access your iCloud documents
+      %a{:href => "#"} This is a blog post for testing.
     %p Apple has a strange idea of cloud based storage. The biggest problem of the current way for accessing files in iCloud is that you have no other option but to open the same application you used to put stuff into iCloud to access it again. Which means, once you use Mail to put a PDF into iCloud, it is somehow lost in the virtual realms. At least that's what I thought. After a bit of searching I found the files hidden in a folder in my Library.
     %p Since I hate digging to folders just to reach a folder I know, I decided to make a symbolic link to the folder into my home directory. You can do the same by entering the following command into Terminal.app:
     %pre>

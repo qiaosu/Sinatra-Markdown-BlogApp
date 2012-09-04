@@ -1,11 +1,44 @@
-%h3 
-  Login
+%header{:id => "top"}
+  %h1
+    %a.clearfix{:href => "#"}
+      %b
+      %i
+      %span Stock Diary
+  %nav.menu
+    %ul
+      - if current_user
+        %li.nav-blog.active
+          %a{:href => "#"} Blog
+        %li.nav-logout
+          %a{:href => "/logout"} logout
+      - else
+        %li.nav-login
+          %a{:href => "/login"} login
+        %li.nav-register
+          %a{:href => "/signup"} register
+%section#content
+  %h2 
+    Login
   %hr
   %form{:action => "/login", :method => "post"}
     %p
       %label{:for => "email"} Email
+      %br/
       %input{:type => "text", :name => "email", :value => "#{params[:email]}"}/
     %p
       %label{:for => "password"} Password
+      %br/
       %input{:type => "password", :name => "password"}/
     %input.btn.btn-large.btn-primary{:type => "submit", :value => "Login"}/
+.side
+  %aside#info
+    %h3 About
+    %p This is a blog by Kenshin. Design, Code and other chaos included.
+  %aside
+    %h2 Hint
+    %p You can use markdown for writing this blog.
+%footer
+  © 2004-2012 
+  %a{:href => "http://florianpichler.de"} Florian Pichler
+  %br
+  %a{:href => "http://einserver.de/imprint"} Imprint
