@@ -21,6 +21,8 @@ class User
   validates_confirmation_of     :password
   validates_length_of           :password, :min => 6
 
+  has n, :posts
+
   after :create do
     self.token = SecureRandom.hex
   end
@@ -32,6 +34,20 @@ class User
   def admin?
     self.admin
   end
+
+end
+
+class Post
+  include DataMapper::Resource
+
+  property :id,             Serial
+  property :name,           String,       :required => true
+  property :file_src,       String,       :required => true
+  property :created_at,     DateTime
+  property :updated_at,     DateTime
+  property :stat,           Integer,      :default => 0
+
+  belongs_to :user
 
 end
 
