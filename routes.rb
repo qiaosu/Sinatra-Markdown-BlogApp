@@ -6,6 +6,7 @@ get "/" do
   if current_user
     @posts = current_user.posts.all(:order => [:id])
   end
+  p File.dirname(__FILE__)
   @output_arr = []
   @posts.each do |post|  
     @output = File.open("#{post.file_src}", "rb").read
@@ -66,4 +67,12 @@ get '/logout' do
   session[:user] = nil
   flash[:info] = "Successfully logged out"
   redirect '/'
+end
+
+get '/admin/post/:id' do 
+  @post = current_user.posts.get(params[:id])
+  @output = File.open("#{@post.file_src}", "rb").read
+  @output.force_encoding("UTF-8")
+
+  haml :admin_post
 end

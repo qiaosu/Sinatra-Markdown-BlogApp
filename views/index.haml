@@ -19,11 +19,11 @@
           %a{:href => "/signup"} register
 %section#content
   - if current_user
-    - @output_arr.each do |post|
+    - @posts.each_with_index do |post,i|
       %article
-        = glorify post
+        = glorify @output_arr[i]
         .extra-admin
-          %a{:href => "#"} edit
+          %a{:href => "/admin/post/#{post.id}"} edit
   %article
     %h2
       %a{:href => "#"} This is a blog post for testing.
