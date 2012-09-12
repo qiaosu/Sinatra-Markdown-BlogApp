@@ -19,10 +19,11 @@
           %a{:href => "/signup"} register
 %section#content
   - if current_user
-    %article
-      = glorify @diary_0
-      .extra-admin
-        %a{:href => "#"} edit
+    - @output_arr.each do |post|
+      %article
+        = glorify post
+        .extra-admin
+          %a{:href => "#"} edit
   %article
     %h2
       %a{:href => "#"} This is a blog post for testing.

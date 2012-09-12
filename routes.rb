@@ -3,8 +3,15 @@ require 'haml'
 require 'glorify'
 
 get "/" do
-  @diary_0 = File.open("#{File.dirname(__FILE__)}/diaries/2012.09.02.md", "rb").read
-  @diary_0.force_encoding("UTF-8")
+  if current_user
+    @posts = current_user.posts.all(:order => [:id])
+  end
+  @output_arr = []
+  @posts.each do |post|  
+    @output = File.open("#{post.file_src}", "rb").read
+    @output.force_encoding("UTF-8")
+    @output_arr << @output
+  end  
   haml :index
 end
 
