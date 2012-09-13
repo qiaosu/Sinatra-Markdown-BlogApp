@@ -1,1 +1,22 @@
-%p welcome!
+-# coding: UTF-8
+%header.clearfix{:id => "top"}
+  %h1
+    %a.clearfix{:href => "#"}
+      %b
+      %i
+      %span Stock Diary
+  %nav.menu
+    %ul
+      %li.nav-blog.active
+        %a{:href => "#"} Blog
+      %li.nav-logout
+        %a{:href => "/logout"} logout
+%section.clearfix#content
+  %section#editor-container
+    #editor
+      = @output
+%footer
+  © 2004-2012 
+  %a{:href => "http://florianpichler.de"} Florian Pichler
+  %br
+  %a{:href => "http://einserver.de/imprint"} Imprint

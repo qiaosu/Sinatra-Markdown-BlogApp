@@ -3,6 +3,7 @@ require 'haml'
 require 'glorify'
 
 get "/" do
+  css :main_style
   if current_user
     @posts = current_user.posts.all(:order => [:id])
   end
@@ -70,9 +71,15 @@ get '/logout' do
 end
 
 get '/admin/post/:id' do 
+  css :admin_style
+  js :ace, :admin
   @post = current_user.posts.get(params[:id])
   @output = File.open("#{@post.file_src}", "rb").read
   @output.force_encoding("UTF-8")
 
-  haml :admin_post
+  if current_user
+    haml :admin_post
+  else 
+    redirect "/"
+  end
 end
