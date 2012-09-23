@@ -6,14 +6,14 @@ get "/" do
   css :main_style
   if current_user
     @posts = current_user.posts.all(:order => [:id])
+    p File.dirname(__FILE__)
+    @output_arr = []
+    @posts.each do |post|  
+      @output = File.open("#{post.file_src}", "rb").read
+      @output.force_encoding("UTF-8")
+      @output_arr << @output
+    end  
   end
-  p File.dirname(__FILE__)
-  @output_arr = []
-  @posts.each do |post|  
-    @output = File.open("#{post.file_src}", "rb").read
-    @output.force_encoding("UTF-8")
-    @output_arr << @output
-  end  
   haml :index
 end
 
